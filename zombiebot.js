@@ -19,9 +19,6 @@ var transport = nodemailer.createTransport("SMTP", {
 
 var browser = new Browser({ debug: true });
 
-
-
-
 function notify (clss) {
   transport.sendMail({
       from: "Checker <foo@blurdybloop.com>", // sender address
@@ -40,7 +37,7 @@ function check_classes (bwsr) {
   var table = bwsr.query(".PSLEVEL1GRIDWBO");
 
   if (!table) {
-    console.log('Not logged in?')
+    console.log('Not logged in.')
     return [];
   }
 
@@ -83,6 +80,7 @@ function do_the_thing (browser) {
 
 browser.visit(url, function () {
 
+  console.log('attempting login')
   // Login
   browser.fill('netid', netid).fill('password', pass);
   browser.pressButton('input[type=submit]', function() {
