@@ -38,6 +38,12 @@ function check_classes (bwsr) {
   console.log('checking classes')
 
   var table = bwsr.query(".PSLEVEL1GRIDWBO");
+
+  if (!table) {
+    console.log('Not logged in?')
+    return [];
+  }
+
   var classes = table2json.parse(table).map(function (clss) {
 
     delete clss['Delete'];
