@@ -61,7 +61,6 @@ function check_classes (bwsr) {
 
 function do_the_thing (browser) {
   var classes = check_classes(browser);
-  console.log(classes);
   
   for (var i = classes.length - 1; i >= 0; i--) {
     if (classes[i]['Status'] === 'OPEN') notify(classes[i]);
