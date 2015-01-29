@@ -6,6 +6,7 @@ var creds = require('./creds.json');
 
 var netid = creds.netid;
 var pass = creds.password;
+var notify_at = "mr.kev@me.com";
 var url = "https://selfservice.adminapps.cornell.edu/psc/cuselfservice/EMPLOYEE/HRMS/c/SA_LEARNER_SERVICES.SSR_SSENRL_ADD.GBL?Page=SSR_SSENRL_ADD&Action=A"
 
 var transport = nodemailer.createTransport("SMTP", {
@@ -24,7 +25,7 @@ var browser = new Browser({ debug: true });
 function notify (clss) {
   transport.sendMail({
       from: "Checker <foo@blurdybloop.com>", // sender address
-      to: netid + "@cornell.edu", // list of receivers
+      to: notify_at, // list of receivers
       subject: clss['Class'] + " " + clss['Status'], // Subject line
       text: url, // plaintext body
       html:'<a href="' + url + '">' + url + '</a>'
