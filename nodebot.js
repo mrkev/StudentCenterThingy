@@ -24,11 +24,18 @@ function start (err, phantom) {
             page.evaluate(function() {
                   // console.log(document.documentElement.innerHTML);
 
-                  document.querySelector("input[name='netid']").value    = "NETID";
-                  document.querySelector("input[name='password']").value = "PASSWORD";
+                  document.querySelector("input[name='netid']").value    = "netid";
+                  document.querySelector("input[name='password']").value = "password";
                   document.querySelector("form[name='login']").submit();
 
                   console.log("Login submitted!");
+
+                  page.render('github.png');
+
+
+                  // document.getElementById("DERIVED_SSS_SCL_LINK_ADD_ENRL").click();
+                  
+
 
                   page.render('github.png');
             });

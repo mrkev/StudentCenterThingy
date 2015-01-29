@@ -2,17 +2,19 @@
   "name": "StudentCenterThingy",
   "version": "0.0.0",
   "description": "A crawler for Cornell's Student Center",
-  "main": "nodebot.js",
+  "main": "zombiebot.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/mrkev/StudentCenterThingy.git"
   },
-  "author": "Mr.Kevington",
+  "author": "mrkev",
   "bugs": {
     "url": "https://github.com/mrkev/StudentCenterThingy/issues"
   },
   "homepage": "https://github.com/mrkev/StudentCenterThingy",
   "dependencies": {
-    "node-phantom": "^0.2.5"
+    "nodemailer": "^0.7.1",
+    "table2json": "^0.2.2",
+    "zombie": "^2.5.1"
   }
 }
